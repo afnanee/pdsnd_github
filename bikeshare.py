@@ -188,7 +188,20 @@ def user_stats(df):
 
     print("\nThis took %s seconds." % (time.time() - start_time))
     print('-'*40)
-
+def disply_raw_data(df):
+        
+    """Displays raw data on user request.
+    Args:
+        (DataFrame) df - Pandas DataFrame containing city data filtered by month and day
+    """
+    print(df.head())
+    next = 0
+    while True:
+        view_raw_data = input('do you like to view next five row of raw data? Enter yes or no')
+        if view_raw_data.lower() != 'yes':
+            return
+        next = next + 5
+        print(df.iloc[next:next+5])
 
 def main():
     while True:
