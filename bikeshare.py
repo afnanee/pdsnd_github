@@ -212,7 +212,12 @@ def main():
         station_stats(df)
         trip_duration_stats(df)
         user_stats(df)
-
+        while True:
+            view_raw_data = input('enter yes if you want to view first 5 rows of data')
+            if view_raw_data.lower() != 'yes':
+                break
+            disply_raw_data(df)
+            break 
         restart = input('\nWould you like to restart? Enter yes or no.\n')
         if restart.lower() != 'yes':
             break
